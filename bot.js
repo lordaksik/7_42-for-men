@@ -19,6 +19,9 @@ bot.hears('/bot', async (ctx) => {
             let black2=0;
             let black2_itog=0;
             let black3_itog=0;
+            let yellow2=0;
+            let yellow2_itog=0;
+            let yellow3_itog=0;
             let black3=0;
 
             for (let i = 0; i <1; i++) {
@@ -113,11 +116,52 @@ bot.hears('/bot', async (ctx) => {
                     black3_itog=black3_itog+1;
                 }
             }
+    for (let i = 0; i < 4; i++) {
+                if (data.items.results[i].results[0].color === 'yellow') {
+                    yellow2 = yellow2 + 1;
+                }
+                if (data.items.results[i].results[1].color === 'yellow') {
+                    yellow2 = yellow2 + 1;
+                }
+                if (data.items.results[i].results[2].color === 'yellow') {
+                   yellow2 = yellow2 + 1;
+                }
+                if (data.items.results[i].results[3].color === 'yellow') {
+                    yellow2 = yellow2 + 1;
+                }
+                if (data.items.results[i].results[4].color === 'yellow') {
+                    yellow2 = yellow2 + 1;
+                }
+                if (data.items.results[i].results[5].color === 'yellow') {
+                    yellow2 = yellow2 + 1;
+                }
+                if (data.items.results[i].results[6].color === 'yellow') {
+                    yellow2 = yellow2 + 1;
+                }
+                if (yellow2===2){
+                    yellow2_itog=yellow2_itog+1;
+                }
+                if (yellow2===3){
+                    yellow3_itog=yellow3_itog+1;
+                }
+            }
+            console.log(black2_itog +'чёрных два')
             if(black2_itog===3)
             {
                 ctx.reply('только 2 черных в каждой раздаче, 3 раздачи подряд')
             }
+     console.log(black3_itog+'чёрных три')
             if(black3_itog===3)
+            {
+                ctx.reply('только 3 черных в каждой раздаче, 3 раздачи подряд')
+            }
+     console.log(yellow3_itog+'жёлтых два')
+     if(yellow2_itog===3)
+            {
+                ctx.reply('только 2 черных в каждой раздаче, 3 раздачи подряд')
+            }
+     console.log(yellow3_itog+'жёлтых три')
+            if(yellow3_itog===3)
             {
                 ctx.reply('только 3 черных в каждой раздаче, 3 раздачи подряд')
             }
@@ -126,7 +170,7 @@ bot.hears('/bot', async (ctx) => {
       ctx.reply( "Вы запустили Бота на стратегию «7/42» ⚠ Не забудьте поставить особые уведомления на Бота, и ждите сигнала на валуйные ситуации!");
        ctx.reply( "Удачи! По всем вопросам пишите @BetgamesTV_Admin"); 
       ctx.reply('Бот отслежки запущен!')
-      global.time = setInterval(request2, 240000)
+      global.time = setInterval(request2, 120000)
    }
 
 
