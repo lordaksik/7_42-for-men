@@ -88,6 +88,7 @@ bot.hears('/bot', async (ctx) => {
             }
 
             for (let i = 0; i < 4; i++) {
+               black2=0;
                 if (data.items.results[i].results[0].color === 'black') {
                     black2 = black2 + 1;
                 }
@@ -117,6 +118,7 @@ bot.hears('/bot', async (ctx) => {
                 }
             }
     for (let i = 0; i < 4; i++) {
+       yellow2=0;
                 if (data.items.results[i].results[0].color === 'yellow') {
                     yellow2 = yellow2 + 1;
                 }
