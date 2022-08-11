@@ -46,11 +46,11 @@ bot.hears('/bot', async (ctx) => {
             }
                 if(number_yellow===1)
                 {
-                    console.log('Был только один жёлтый шар')
+                    ctx.reply('Был только один жёлтый шар')
                 }
             if(number_yellow===4)
             {
-                console.log('Было 4 жёлтых шара')
+                ctx.reply('Было 4 жёлтых шара')
             }
             for (let i = 0; i < 1; i++) {
                 if (data.items.results[i].results[0].color === 'black') {
@@ -77,11 +77,11 @@ bot.hears('/bot', async (ctx) => {
             }
             if(number_black===1)
             {
-                console.log('Был только один чёрный шар')
+                ctx.reply('Был только один чёрный шар')
             }
             if(number_black===1)
             {
-                console.log('Было 4 чёрных шара')
+                ctx.reply('Было 4 чёрных шара')
             }
 
             for (let i = 0; i < 4; i++) {
@@ -115,11 +115,11 @@ bot.hears('/bot', async (ctx) => {
             }
             if(black2_itog===3)
             {
-                console.log('только 2 черных в каждой раздаче, 3 раздачи подряд')
+                ctx.reply('только 2 черных в каждой раздаче, 3 раздачи подряд')
             }
             if(black3_itog===3)
             {
-                console.log('только 3 черных в каждой раздаче, 3 раздачи подряд')
+                ctx.reply('только 3 черных в каждой раздаче, 3 раздачи подряд')
             }
         }
    function good() {
