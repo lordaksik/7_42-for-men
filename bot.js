@@ -9,8 +9,9 @@ bot.start((ctx) => {
 })
 bot.help((ctx) => ctx.reply('Напиши /bot '))
 bot.hears('/bot', async (ctx) => {
+   
  async function request2() {
-
+    try{
             const response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/1/1/")
             const data = await response.json()
 
@@ -49,7 +50,7 @@ bot.hears('/bot', async (ctx) => {
             }
                 if(number_yellow===1)
                 {
-                    ctx.reply('Был только один жёлтый шар')
+                 //   ctx.reply('Был только один жёлтый шар')
                 }
             if(number_yellow===4)
             {
@@ -84,10 +85,10 @@ bot.hears('/bot', async (ctx) => {
             }
             if(number_black===1)
             {
-                ctx.reply('Было 4 чёрных шара')
+              //  ctx.reply('Было 4 чёрных шара')
             }
 
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 3; i++) {
                black2=0;
                 if (data.items.results[i].results[0].color === 'black') {
                     black2 = black2 + 1;
@@ -117,7 +118,7 @@ bot.hears('/bot', async (ctx) => {
                     black3_itog=black3_itog+1;
                 }
             }
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
        yellow2=0;
                 if (data.items.results[i].results[0].color === 'yellow') {
                     yellow2 = yellow2 + 1;
@@ -168,11 +169,15 @@ bot.hears('/bot', async (ctx) => {
                 ctx.reply('только 3 черных в каждой раздаче, 3 раздачи подряд')
             }
         }
+    catch (err) {
+       console.log(err)
+    }
+        }
    function good() {
       ctx.reply( "Вы запустили Бота на стратегию «7/42» ⚠ Не забудьте поставить особые уведомления на Бота, и ждите сигнала на валуйные ситуации!");
        ctx.reply( "Удачи! По всем вопросам пишите @BetgamesTV_Admin"); 
       ctx.reply('Бот отслежки запущен!')
-      global.time = setInterval(request2, 120000)
+      global.time = setInterval(request2, 180000)
    }
 
 
@@ -188,7 +193,7 @@ bot.hears('/end', async (ctx) => {
 
       ctx.reply("Пока");
    } catch (err) {
-      ctx.reply("Этот бот и так выключен");
+      ctx.reply("Пока");
    }
 })
 
