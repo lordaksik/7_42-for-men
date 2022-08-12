@@ -52,10 +52,11 @@ bot.hears('/bot', async (ctx) => {
                 {
                     ctx.reply('Был только один жёлтый шар')
                 }
-            if(number_yellow===4)
-            {
-              //  ctx.reply('Было 4 жёлтых шара')
-            }
+                if(number_yellow===7)
+                {
+                    ctx.reply('Все шары жёлтые')
+                }
+            
             for (let i = 0; i < 1; i++) {
                 if (data.items.results[i].results[0].color === 'black') {
                     number_black = number_black + 1;
@@ -82,6 +83,10 @@ bot.hears('/bot', async (ctx) => {
             if(number_black===1)
             {
                 ctx.reply('Был только один чёрный шар')
+            }
+        if(number_black===7)
+            {
+                ctx.reply('Все шары чёрные')
             }
             if(number_black===4)
             {
