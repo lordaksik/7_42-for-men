@@ -166,12 +166,12 @@ bot.hears('/bot', async (ctx) => {
      console.log(yellow3_itog+'жёлтых два')
      if(yellow2_itog===3)
             {
-                ctx.reply('только 2 черных в каждой раздаче, 3 раздачи подряд')
+                ctx.reply('только 2 жёлтых в каждой раздаче, 3 раздачи подряд')
             }
      console.log(yellow3_itog+'жёлтых три')
             if(yellow3_itog===3)
             {
-                ctx.reply('только 3 черных в каждой раздаче, 3 раздачи подряд')
+                ctx.reply('только 3 жёлтых в каждой раздаче, 3 раздачи подряд')
             }
         }
     catch (err) {
@@ -182,7 +182,7 @@ bot.hears('/bot', async (ctx) => {
       ctx.reply( "Вы запустили Бота на стратегию «7/42» ⚠ Не забудьте поставить особые уведомления на Бота, и ждите сигнала на валуйные ситуации!");
        ctx.reply( "Удачи! По всем вопросам пишите @BetgamesTV_Admin"); 
       ctx.reply('Бот отслежки запущен!')
-      global.time = setInterval(request2, 200000)
+      global.time = setInterval(request2, 180000)
    }
 
 
